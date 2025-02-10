@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>League of Legends Guidebook</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('League.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #ffffff;
+            text-align: center;
+        }
+        header {
+            background-color: rgba(31, 31, 31, 0.8);
+            padding: 20px;
+            font-size: 24px;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+        }
+        .section {
+            background-color: rgba(34, 34, 34, 0.9);
+            margin: 20px 0;
+            padding: 15px;
+            border-radius: 8px;
+        }
+        .champion-guide img, .item-guide img {
+            width: 100px;
+            height: auto;
+            margin: 10px;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #00aaff;
+            color: #ffffff;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #0088cc;
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #333;
+            padding: 20px;
+            border-radius: 8px;
+            max-height: 80%; /* Limit the height of the popup */
+            width: 80%; /* Adjust width as needed */
+            overflow-y: auto; /* Enable scrolling */
+        }
+        .popup button {
+            margin-top: 10px;
+            background-color: red;
+        }
+    </style>
+    <script>
+        function showPopup(content) {
+            document.getElementById('popup-content').innerHTML = content;
+            document.getElementById('popup').style.display = 'block';
+        }
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+    </script>
+</head>
+<body>
+    <header>
+        League of Legends Guidebook
+    </header>
+    <div class="container">
+        <div class="section">
+            <h2>Getting Started</h2>
+            <p>Learn the basics of Summoner's Rift, champion roles, and game objectives.</p>
+            <button onclick="showPopup('Summoner\'s Rift is the primary map in League of Legends. Learn about lanes, turrets, and jungle areas to navigate effectively.')">Read More</button>
+        </div>
+        <div class="section">
+            <h2>Champion Guide</h2>
+            <p>Learn about key champions for each role.</p>
+            <button onclick="showPopup(`<div class='champion-guide'>
+                <h3>Top Lane</h3>
+                <img src='Darius.jpg' alt='Top Champion 1'>
+                <img src='Nasus.jpg' alt='Top Champion 2'>
+                <img src='Trundle.jpg' alt='Top Champion 3'>
+                <p>Top lane champions are usually tanky or bruisers, focusing on sustaining damage and controlling the lane.</p>
+                <h3>Jungle</h3>
+                <img src='MasterYi.jpg' alt='Jungle Champion 1'>
+                <img src='Graves.jpg' alt='Jungle Champion 2'>
+                <img src='Warwick.jpg' alt='Jungle Champion 3'>
+                <p>Jungle champions clear camps, control objectives, and gank lanes to help their team.</p>
+                <h3>Mid Lane</h3>
+                <img src='LeBlanc.jpg' alt='Mid Champion 1'>
+                <img src='Veigar.jpg' alt='Mid Champion 2'>
+                <img src='Akali.jpg' alt='Mid Champion 3'>
+                <p>Mid lane champions are typically mages or assassins with high burst damage and roaming potential.</p>
+                <h3>Bot Lane (ADC)</h3>
+                <img src='Vayne.jpg' alt='ADC Champion 1'>
+                <img src='Jinx.jpg' alt='ADC Champion 2'>
+                <img src='Draven.jpg' alt='ADC Champion 3'>
+                <p>ADC champions deal consistent damage from range and scale well into the late game.</p>
+                <h3>Support</h3>
+                <img src='Soraka.jpg' alt='Support Champion 1'>
+                <img src='Sona.jpg' alt='Support Champion 2'>
+                <img src='Seraphine.jpg' alt='Support Champion 3'>
+                <p>Support champions protect allies, provide vision, and control the pace of fights.</p>
+            </div>`)">View Champion Guide</button>
+        </div>
+        <div class="section">
+            <h2>Item Builds</h2>
+            <p>Optimize your gameplay with the best item builds for every situation.</p>
+            <button onclick="showPopup(`<div class='item-guide'>
+                <h3>Attack Damage (AD) Items</h3>
+                <img src='AD.jpg' alt='AD Items'>
+                <p>AD items boost physical damage, critical strike, and attack speed. Ideal for ADCs and assassins.</p>
+                <h3>Ability Power (AP) Items</h3>
+                <img src='AP.jpg' alt='AP Items'>
+                <p>AP items enhance magic damage and cooldown reduction. Used by mages and hybrid champions.</p>
+                <h3>Tank Items</h3>
+                <img src='Sunfire.jpg' alt='Tank Items'>
+                <p>Tank items provide health, armor, and magic resistance. Essential for frontline champions.</p>
+            </div>`)">See Item Builds</button>
+        </div>
+        <div class="section">
+            <h2>Strategies & Tips</h2>
+            <p>Improve your skills with expert strategies, laning tips, and teamfight tactics.</p>
+            <button onclick="showPopup('Positioning, map awareness, and team coordination are key to victory. Master these elements for a competitive edge.')">Learn More</button>
+        </div>
+    </div>
+    <div id="popup" class="popup">
+        <p id="popup-content"></p>
+        <button onclick="closePopup()">Close</button>
+    </div>
+</body>
+</html>
